@@ -28,6 +28,6 @@ async function buildAsset(sourceDir, outputFile, expectedBytes) {
 }
 
 await buildAsset("assets-src/stkz-hero", "public/images/stkz-hero.webp", 34060);
-await buildAsset("assets-src/stkz-action-duel", "public/images/stkz-action-duel.webp", 18886);
+await buildAsset("assets-src/stkz-action-duel", "public/images/stkz-action-duel.webp", 11110);
 await buildAsset("assets-src/stkz-action-strike", "public/images/stkz-action-strike.webp", 13746);
-await buildAsset("assets-src/stkz-action-attack", "public/images/stkz-action-attack.webp", 15418);
+await buildAsset("assets-src/stkz-action-attack", "public/images/stkz-action-attack.webp", 8984);
