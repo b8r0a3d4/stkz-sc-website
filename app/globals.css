@@ -157,8 +157,14 @@ p { font-size: 18px; line-height: 1.62; }
   .nav-cta { display: none; }
   .home-hero { min-height: auto; }
   .hero-grid { padding: 80px 0 70px; gap: 38px; }
-  h1 { font-size: clamp(3.4rem, 17vw, 5.4rem); }
-  h2 { font-size: clamp(2.5rem, 11vw, 4rem); }
+  h1 { font-size: clamp(2.75rem, 13vw, 4.75rem); }
+  h2 { font-size: clamp(2.35rem, 10vw, 3.75rem); }
+  .hero-copy, .page-hero-text { min-width: 0; max-width: 100%; }
+  .hero-copy h1, .page-hero h1, .section-heading h2, .access-grid h2, .cta-inner h2 {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
   .pillar-row { flex-direction: column; align-items: flex-start; padding: 22px 0; gap: 8px; }
   .section { padding: 70px 0; }
   .split-heading { gap: 18px; }
@@ -166,7 +172,7 @@ p { font-size: 18px; line-height: 1.62; }
   .feature-card { min-height: 260px; }
   .page-hero-inner { padding: 84px 0 52px; }
   .page-hero-photo .page-hero-inner { padding: 58px 0 46px; gap: 26px; }
-  .page-hero h1, .page-hero-photo h1 { font-size: clamp(3rem, 15vw, 5rem); }
+  .page-hero h1, .page-hero-photo h1 { font-size: clamp(2.65rem, 11.5vw, 4.5rem); }
   .page-hero-media, .page-hero-media img { min-height: 260px; }
   .form-grid { grid-template-columns: 1fr; }
   .form-grid label.full { grid-column: auto; }
@@ -175,6 +181,10 @@ p { font-size: 18px; line-height: 1.62; }
 }
 
 @media (max-width: 480px) {
+  .container, .card-grid { width: min(100% - 32px, var(--max)); }
+  h1 { font-size: clamp(2.65rem, 12vw, 3.6rem); }
+  .page-hero h1, .page-hero-photo h1 { font-size: clamp(2.5rem, 10.75vw, 3.35rem); }
+  .hero-lead, .page-hero-copy { font-size: 18px; }
   .button-row, .cta-actions { flex-direction: column; align-items: stretch; }
   .button { width: 100%; }
   .hero-mark { padding: 20px; }
