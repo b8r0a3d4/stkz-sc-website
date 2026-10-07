@@ -328,3 +328,20 @@ body { overflow-x: clip; }
   .form-section { margin-bottom: 22px; }
   .form-optional summary span { float: none; margin-left: 8px; }
 }
+
+
+/* Join mobile regression fixes */
+@media (min-width: 992px) {
+  .join-copy { order: 1; }
+  .join-form { order: 2; }
+}
+@media (max-width: 991px) {
+  .site-header .desktop-nav { display: none !important; }
+  .site-header .desktop-nav.open { display: flex !important; }
+  .site-header .nav-cta { display: none !important; }
+  .site-header .menu-button { display: block !important; }
+}
+@media (max-width: 767px) {
+  .join-form { order: 1 !important; }
+  .join-copy { order: 2 !important; }
+}
