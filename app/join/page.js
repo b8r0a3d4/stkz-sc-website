@@ -28,6 +28,9 @@ export default function JoinPage() {
 
       <section className="section" id="player-interest">
         <div className="container content-grid join-grid">
+          <div className="join-form">
+            <EmailForm type="join" />
+          </div>
           <div className="join-copy">
             <p className="eyebrow">What Happens Next</p>
             <h2>Start the conversation.</h2>
@@ -39,9 +42,6 @@ export default function JoinPage() {
                 <li><span>3</span><div><strong>We follow up with the next step.</strong></div></li>
               </ol>
             </div>
-          </div>
-          <div className="join-form">
-            <EmailForm type="join" />
           </div>
         </div>
       </section>
