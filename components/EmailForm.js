@@ -57,57 +57,51 @@ export default function EmailForm({ type = "contact" }) {
           <p className="eyebrow">Player Interest</p>
           <h3>Start with the essentials.</h3>
         </div>
-        <span className="form-time">No exact team name needed</span>
+        <span className="form-time">Just 4 required fields</span>
       </div>
 
       <fieldset className="form-section">
-        <legend><span>01</span> Parent contact</legend>
+        <legend><span>01</span> Player</legend>
         <div className="form-grid">
-          <label>Parent / guardian name<input name="Parent / guardian name" autoComplete="name" required /></label>
-          <label>Email<input name="Email" type="email" autoComplete="email" required /></label>
-          <label className="full">Mobile phone<input name="Mobile phone" type="tel" autoComplete="tel" required /></label>
+          <label>Player name<input name="Player name" required /></label>
+          <label>Birth year<input name="Player birth year" inputMode="numeric" maxLength="4" placeholder="e.g. 2014" required /></label>
         </div>
       </fieldset>
 
       <fieldset className="form-section">
-        <legend><span>02</span> Player</legend>
+        <legend><span>02</span> Parent contact</legend>
         <div className="form-grid">
-          <label>Player name<input name="Player name" required /></label>
-          <label>Birth year<input name="Player birth year" inputMode="numeric" maxLength="4" placeholder="e.g. 2014" required /></label>
-          <label>Team preference<select name="Player gender / team preference" required defaultValue="">
-            <option value="" disabled>Select one</option>
+          <label>Parent / guardian name<input name="Parent / guardian name" autoComplete="name" required /></label>
+          <label>Mobile phone<input name="Mobile phone" type="tel" autoComplete="tel" required /></label>
+        </div>
+      </fieldset>
+
+      <details className="form-optional">
+        <summary>Add more player details <span>Optional</span></summary>
+        <div className="form-grid optional-grid">
+          <label>Email<input name="Email" type="email" autoComplete="email" /></label>
+          <label>Team preference<select name="Player gender / team preference" defaultValue="">
+            <option value="">Select one</option>
             <option>Boys team</option>
             <option>Girls team</option>
             <option>Open to the best fit</option>
             <option>Not sure yet</option>
           </select></label>
-          <label>Current playing level<select name="Current playing level" required defaultValue="">
-            <option value="" disabled>Select one</option>
+          <label>Current playing level<select name="Current playing level" defaultValue="">
+            <option value="">Select one</option>
             <option>New to organized soccer</option>
             <option>Recreational</option>
             <option>Academy / developmental</option>
             <option>Competitive / club</option>
             <option>Not sure</option>
           </select></label>
-        </div>
-      </fieldset>
-
-      <fieldset className="form-section">
-        <legend><span>03</span> Next step</legend>
-        <div className="form-grid">
-          <label className="full">What is your family looking for?<select name="What family is looking for" required defaultValue="">
-            <option value="" disabled>Select one</option>
+          <label>What is your family looking for?<select name="What family is looking for" defaultValue="">
+            <option value="">Select one</option>
             <option>Competitive team / tryout</option>
             <option>Player development / training</option>
             <option>Both team and development</option>
             <option>Not sure — help us choose</option>
           </select></label>
-        </div>
-      </fieldset>
-
-      <details className="form-optional">
-        <summary>Add playing background or comments <span>Optional</span></summary>
-        <div className="form-grid optional-grid">
           <label>Current team / club<input name="Current team / club" /></label>
           <label>Primary position<input name="Primary position" /></label>
           <label className="full">Anything else we should know?<textarea name="Comments" rows="4" /></label>
