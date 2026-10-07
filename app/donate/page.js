@@ -11,33 +11,39 @@ export const metadata = {
 const impact = [
   {
     number: "01",
-    title: "Player Access",
-    copy: "Help reduce financial barriers that can keep players from participating in quality soccer environments.",
+    title: "Player Scholarships & Access",
+    copy: "Help reduce the financial barriers that can keep a player from joining, training, or competing.",
+    uses: ["Participation assistance", "Player-development opportunities", "Access where family resources are a barrier"],
   },
   {
     number: "02",
-    title: "Equipment",
-    copy: "Support access to the gear and equipment players and teams need to train and compete.",
+    title: "Coaching & Player Development",
+    copy: "Help put quality instruction, better training environments, and more developmental opportunities in front of players.",
+    uses: ["Quality coaching", "Training opportunities", "Player-development programming"],
   },
   {
     number: "03",
-    title: "Coaching & Development",
-    copy: "Invest in quality coaching, training environments, and player-development opportunities.",
+    title: "Equipment",
+    copy: "Help make sure players and teams have the equipment needed to train and compete.",
+    uses: ["Player equipment", "Training equipment", "Team equipment needs"],
   },
   {
     number: "04",
     title: "Competition",
-    copy: "Help create access to meaningful games, events, tournaments, and competitive experiences.",
+    copy: "Help create access to meaningful competitive experiences that challenge players and expand opportunity.",
+    uses: ["League competition", "Tournaments and events", "Competitive player opportunities"],
   },
   {
     number: "05",
     title: "Facilities",
-    copy: "Support soccer spaces that create more repetitions, more training time, and more access to the game.",
+    copy: "Help build and improve places where players can train more often, play more games, and stay connected to soccer.",
+    uses: ["Training spaces", "Field and facility improvements", "Expanded community access"],
   },
   {
     number: "06",
-    title: "Community Opportunity",
-    copy: "Help STKZ SC create more ways for players and families across East Texas to connect with the game.",
+    title: "Community Soccer Access",
+    copy: "Help STKZ SC create more ways for players and families across East Texas to experience quality soccer.",
+    uses: ["Access-focused programming", "Community opportunities", "Mission-driven soccer initiatives"],
   },
 ];
 
@@ -68,23 +74,35 @@ export default function DonatePage() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="container section-heading split-heading">
+      <section className="section donation-use-section">
+        <div className="container donation-use-heading">
           <div>
-            <p className="eyebrow">What Donations Support</p>
-            <h2>More access. Better environments. More opportunity.</h2>
+            <p className="eyebrow">Where Your Donation Goes</p>
+            <h2>Your gift helps remove barriers and build better soccer opportunities.</h2>
           </div>
-          <p>Charitable support helps STKZ SC invest in the parts of the player experience that can otherwise become barriers for families.</p>
+          <div className="donation-use-callout">
+            <strong>Donations support the player experience.</strong>
+            <p>From helping a player gain access to the game to improving coaching, equipment, competition, and facilities, charitable support is directed toward advancing STKZ SC’s nonprofit mission.</p>
+          </div>
         </div>
 
         <div className="card-grid three donate-impact-grid">
           {impact.map((item) => (
-            <article className="feature-card donate-impact-card" key={item.number}>
-              <span>{item.number}</span>
-              <h3>{item.title}</h3>
+            <article className="donate-impact-card" key={item.number}>
+              <div className="impact-card-top">
+                <span>{item.number}</span>
+                <h3>{item.title}</h3>
+              </div>
               <p>{item.copy}</p>
+              <ul className="impact-use-list">
+                {item.uses.map((use) => <li key={use}>{use}</li>)}
+              </ul>
             </article>
           ))}
+        </div>
+
+        <div className="container donation-use-note">
+          <p><strong>Want your gift to support a specific area?</strong> Tell us what matters most to you when you contact STKZ SC. We will explain the current giving options and whether a contribution can be accepted for that specific purpose.</p>
         </div>
       </section>
 
