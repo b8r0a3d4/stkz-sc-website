@@ -35,6 +35,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://4q000fmy3bu2yndr.public.blob.vercel-storage.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="//4q000fmy3bu2yndr.public.blob.vercel-storage.com" />
+      </head>
       <body className={`${display.variable} ${body.variable}`}>
         <Header />
         <main>{children}</main>
