@@ -1,5 +1,6 @@
 import PageHero from "@/components/PageHero";
 import CTA from "@/components/CTA";
+import { media } from "@/data/media";
 
 export const metadata = {
   title: "Every Player. Every Chance.",
@@ -9,7 +10,7 @@ export const metadata = {
 export default function AccessPage() {
   return (
     <>
-      <PageHero eyebrow="Our Access Mission" title="Talent exists everywhere. Opportunity doesn’t." copy="STKZ SC is working to reduce barriers that keep players from accessing quality coaching, competition, equipment, facilities, and development opportunities." image="/images/stkz-action-duel.webp" imageAlt="Youth soccer players competing with courage during a match" />
+      <PageHero eyebrow="Our Access Mission" title="Talent exists everywhere. Opportunity doesn’t." copy="STKZ SC is working to reduce barriers that keep players from accessing quality coaching, competition, equipment, facilities, and development opportunities." image={media.access} imageAlt="Youth soccer players competing with courage during a match" />
       <section className="section">
         <div className="container content-grid">
           <div><p className="eyebrow">Every Player. Every Chance.</p><p className="statement">Access can change a player's path.</p></div>

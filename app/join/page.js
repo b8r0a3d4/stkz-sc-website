@@ -1,5 +1,6 @@
 import PageHero from "@/components/PageHero";
 import EmailForm from "@/components/EmailForm";
+import { media } from "@/data/media";
 
 export const metadata = {
   title: "Join STKZ | Tryouts & Player Interest",
@@ -9,7 +10,7 @@ export const metadata = {
 export default function JoinPage() {
   return (
     <>
-      <PageHero eyebrow="Tryouts · Teams · Development" title="Join STKZ." copy="Tell us about your player. We’ll help identify the right next step based on age, current level, goals, and available opportunities." image="/images/stkz-action-duel.webp" imageAlt="Youth soccer players battling for the ball during a match" />
+      <PageHero eyebrow="Tryouts · Teams · Development" title="Join STKZ." copy="Tell us about your player. We’ll help identify the right next step based on age, current level, goals, and available opportunities." image={media.join} imageAlt="Youth soccer players battling for the ball during a match" />
       <section className="section">
         <div className="container content-grid">
           <div>

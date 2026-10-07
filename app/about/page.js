@@ -1,5 +1,6 @@
 import PageHero from "@/components/PageHero";
 import CTA from "@/components/CTA";
+import { media } from "@/data/media";
 
 export const metadata = {
   title: "About STKZ",
@@ -9,7 +10,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      <PageHero eyebrow="About STKZ" title="Our Community. Our Why." copy="STKZ SC exists to develop players, create opportunities, and build a stronger soccer community in East Texas." image="/images/stkz-action-duel.webp" imageAlt="Youth soccer players competing for possession during a match" />
+      <PageHero eyebrow="About STKZ" title="Our Community. Our Why." copy="STKZ SC exists to develop players, create opportunities, and build a stronger soccer community in East Texas." image={media.about} imageAlt="Youth soccer players competing for possession during a match" />
       <section className="section">
         <div className="container content-grid">
           <div>

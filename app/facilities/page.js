@@ -1,6 +1,7 @@
 import PageHero from "@/components/PageHero";
 import CTA from "@/components/CTA";
 import { site } from "@/data/site";
+import { media } from "@/data/media";
 
 export const metadata = {
   title: "Facilities",
@@ -10,7 +11,7 @@ export const metadata = {
 export default function FacilitiesPage() {
   return (
     <>
-      <PageHero eyebrow="Jacksonville, Texas" title="Places built for the game." copy="STKZ SC is investing in soccer environments that expand development, competition, and access in East Texas." image="/images/stkz-action-strike.webp" imageAlt="Youth soccer player playing the ball in a competitive outdoor match" />
+      <PageHero eyebrow="Jacksonville, Texas" title="Places built for the game." copy="STKZ SC is investing in soccer environments that expand development, competition, and access in East Texas." image={media.facilities} imageAlt="Youth soccer player playing the ball in a competitive outdoor match" />
       <section className="section">
         <div className="container facility-grid">
           {site.facilities.map((facility) => <article className="facility-card" key={facility.name}><p className="eyebrow gold">{facility.eyebrow}</p><h3>{facility.name}</h3><p>{facility.copy}</p><p className="address">{facility.address}</p></article>)}

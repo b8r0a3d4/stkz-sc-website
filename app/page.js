@@ -2,11 +2,12 @@ import Link from "next/link";
 import Logo from "@/components/Logo";
 import CTA from "@/components/CTA";
 import { developmentPillars, site } from "@/data/site";
+import { media } from "@/data/media";
 
 export default function HomePage() {
   return (
     <>
-      <section className="home-hero">
+      <section className="home-hero" style={{ "--hero-image": `url("${media.home}")` }}>
         <div className="pitch-lines" aria-hidden="true" />
         <div className="container hero-grid">
           <div className="hero-copy">

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import CTA from "@/components/CTA";
+import { media } from "@/data/media";
 
 export const metadata = {
   title: "Events",
@@ -10,7 +11,7 @@ export const metadata = {
 export default function EventsPage() {
   return (
     <>
-      <PageHero eyebrow="Events" title="Train. Compete. Connect." copy="STKZ SC events can include tryouts, clinics, camps, tournaments, player-development sessions, and community opportunities." image="/images/stkz-action-attack.webp" imageAlt="Youth soccer players attacking together during match play" />
+      <PageHero eyebrow="Events" title="Train. Compete. Connect." copy="STKZ SC events can include tryouts, clinics, camps, tournaments, player-development sessions, and community opportunities." image={media.events} imageAlt="Youth soccer players attacking together during match play" />
       <section className="section">
         <div className="container content-grid">
           <div><p className="eyebrow">Upcoming Events</p><h2>Current event details are posted as they are confirmed.</h2><p>We keep this page focused on real, current opportunities rather than placeholder schedules.</p></div>
