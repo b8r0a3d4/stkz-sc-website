@@ -1,7 +1,7 @@
 export const site = {
   name: "STKZ SC",
   tagline: "Every Player. Every Chance.",
-  descriptor: "Non-profit Soccer Organization · East Texas",
+  descriptor: "Nonprofit Youth Soccer · Jacksonville, Texas",
   email: "stkzsc@gmail.com",
   facebook: "https://www.facebook.com/profile.php?id=61577763441107",
   nav: [
