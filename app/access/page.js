@@ -1,5 +1,5 @@
 import PageHero from "@/components/PageHero";
-import CTA from "@/components/CTA";
+import Link from "next/link";
 import { media } from "@/data/media";
 
 export const metadata = {
@@ -23,7 +23,19 @@ export default function AccessPage() {
           <div><p>When more players have meaningful access to the game, the entire soccer community gets stronger — more coaches, more competition, more connection, and more players who believe there is a next step.</p></div>
         </div>
       </section>
-      <CTA title="Support the mission. Grow the opportunity." copy="Contact STKZ SC about partnerships, sponsorships, equipment support, or other ways to help expand access." />
+      <section className="cta-section">
+        <div className="container cta-inner">
+          <div>
+            <p className="eyebrow">Support the Mission</p>
+            <h2>Help grow the opportunity.</h2>
+            <p>Support can help expand access to coaching, equipment, competition, facilities, and player-development opportunities.</p>
+          </div>
+          <div className="cta-actions">
+            <Link href="/donate" className="button button-navy">Donate to STKZ</Link>
+            <Link href="/contact" className="button button-outline-dark">Contact Us</Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
