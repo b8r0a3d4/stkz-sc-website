@@ -10,23 +10,39 @@ export const metadata = {
 export default function JoinPage() {
   return (
     <>
-      <PageHero eyebrow="Tryouts · Teams · Development" title="Join STKZ." copy="Tell us about your player. We’ll help identify the right next step based on age, current level, goals, and available opportunities." image={media.join} imageAlt="Youth soccer players battling for the ball during a match" />
-      <section className="section">
-        <div className="container content-grid">
-          <div>
-            <p className="eyebrow">Player Interest</p>
+      <PageHero
+        eyebrow="Tryouts · Teams · Development"
+        title="Join STKZ."
+        copy="Start with the essentials. We’ll use your player’s age, level, team preference, and goals to help identify the right next step."
+        image={media.join}
+        imageAlt="Youth soccer players battling for the ball during a match"
+      />
+
+      <section className="join-assurance">
+        <div className="container join-assurance-row">
+          <span>No exact team name needed</span>
+          <span>Start with current level + goals</span>
+          <span>We help identify the next step</span>
+        </div>
+      </section>
+
+      <section className="section" id="player-interest">
+        <div className="container content-grid join-grid">
+          <div className="join-copy">
+            <p className="eyebrow">What Happens Next</p>
             <h2>Start the conversation.</h2>
-            <p>Complete the form with as much context as you can. STKZ SC will use it to point your family toward the most relevant team, tryout, evaluation, or development opportunity.</p>
-            <div className="content-card">
-              <h3>What happens next?</h3>
-              <ul className="list-clean">
-                <li>We review the player's age and current soccer environment.</li>
-                <li>We look for the most relevant team or training pathway.</li>
-                <li>We follow up with the next available step.</li>
-              </ul>
+            <p>You do not need to solve the placement question before contacting us. Give us the player basics and what your family is looking for.</p>
+            <div className="content-card next-step-card">
+              <ol className="join-steps">
+                <li><span>1</span><div><strong>We review the player.</strong><p>Age, current environment, level, and goals.</p></div></li>
+                <li><span>2</span><div><strong>We identify the most relevant path.</strong><p>Team, tryout, evaluation, or development opportunity.</p></div></li>
+                <li><span>3</span><div><strong>We follow up with the next step.</strong></div></li>
+              </ol>
             </div>
           </div>
-          <EmailForm type="join" />
+          <div className="join-form">
+            <EmailForm type="join" />
+          </div>
         </div>
       </section>
     </>
