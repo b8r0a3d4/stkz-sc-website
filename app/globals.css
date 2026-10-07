@@ -489,3 +489,109 @@ body { overflow-x: clip; }
 @media (max-width: 767px) {
   .home-hero-media { object-position: 62% center; }
 }
+
+
+/* Donation page */
+.donate-nav-link { color: var(--gold); }
+
+.donate-intro {
+  background: var(--deep);
+  color: white;
+  padding: 74px 0;
+}
+.donate-intro-grid {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 72px;
+  align-items: center;
+}
+.donate-intro-grid h2 { margin-bottom: 0; }
+.donate-intro-grid p { color: #dfe5ef; }
+.donate-intro-grid .button { margin-top: 16px; }
+
+.donate-impact-grid .feature-card { min-height: 290px; }
+.donate-impact-card h3 { margin-top: 34px; }
+
+.donate-how-grid {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 20px;
+}
+.donate-how-grid > div:first-child {
+  grid-row: span 3;
+  padding-right: 42px;
+}
+.donate-how-grid > div:first-child p:last-child {
+  color: #dfe5ef;
+  max-width: 640px;
+}
+.donate-step-card {
+  border-top: 1px solid rgba(255,255,255,.2);
+  padding: 26px 0 18px;
+}
+.donate-step-number {
+  color: var(--gold);
+  font-family: var(--font-display), Arial Black, sans-serif;
+  font-size: 12px;
+}
+.donate-step-card h3 {
+  margin: 16px 0 10px;
+  font-size: 1.45rem;
+}
+.donate-step-card p {
+  color: #dfe5ef;
+  font-size: 16px;
+}
+.donate-step-card .button { margin-top: 8px; }
+
+.donate-legal-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 70px;
+  align-items: start;
+}
+.nonprofit-card .text-link {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.donor-note {
+  background: var(--navy);
+  color: white;
+  border-top: 1px solid rgba(255,215,0,.22);
+}
+.donor-note-inner {
+  padding: 38px 0;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 36px;
+  align-items: start;
+}
+.donor-note-inner p { margin: 0; }
+.donor-note-inner p:last-child {
+  color: #dfe5ef;
+  font-size: 15px;
+}
+
+.access-actions { margin-top: 22px; }
+
+@media (max-width: 991px) {
+  .donate-intro-grid,
+  .donate-legal-grid { grid-template-columns: 1fr; gap: 30px; }
+  .donate-how-grid { grid-template-columns: 1fr; }
+  .donate-how-grid > div:first-child {
+    grid-row: auto;
+    padding-right: 0;
+    margin-bottom: 12px;
+  }
+  .donor-note-inner { grid-template-columns: 1fr; gap: 10px; }
+}
+
+@media (max-width: 767px) {
+  .donate-intro { padding: 54px 0; }
+  .donate-intro-grid { gap: 22px; }
+  .donate-impact-grid .feature-card { min-height: auto; }
+  .donate-how-grid { gap: 0; }
+  .donate-step-card { padding: 24px 0; }
+  .donor-note-inner { padding: 30px 0; }
+}
