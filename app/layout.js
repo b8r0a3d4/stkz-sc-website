@@ -2,6 +2,7 @@ import { Archivo_Black, Cabin } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { media } from "@/data/media";
 
 const display = Archivo_Black({
   weight: "400",
@@ -26,7 +27,7 @@ export const metadata = {
     description: "Developing Players. Creating Opportunities. Building Community.",
     url: "https://stkzsc.org",
     siteName: "STKZ SC",
-    images: [{ url: "https://cdn.prod.website-files.com/6ac51e204a6da6912f741813/6ac529942a49a703374bc6be_STKZ%20SC%20Shield%20Logo.png", width: 1000, height: 1000, alt: "STKZ SC shield logo" }],
+    images: [{ url: media.home, alt: "STKZ SC youth soccer action" }],
     type: "website",
   },
 };
