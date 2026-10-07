@@ -115,7 +115,7 @@ export default function HomePage() {
       <section className="section access-preview">
         <div className="container access-grid">
           <div><p className="eyebrow gold">Our Community. Our Why.</p><h2>Talent exists everywhere. Opportunity doesn’t.</h2></div>
-          <div><p>STKZ SC is working to reduce barriers through quality coaching, equipment, competition, facilities, scholarships, and player-development opportunities.</p><Link href="/access" className="button button-gold">Our Access Mission</Link></div>
+          <div><p>STKZ SC is working to reduce barriers through quality coaching, equipment, competition, facilities, scholarships, and player-development opportunities.</p><div className="button-row access-actions"><Link href="/access" className="button button-gold">Our Access Mission</Link><Link href="/donate" className="button button-outline-light">Support STKZ</Link></div></div>
         </div>
       </section>
 
