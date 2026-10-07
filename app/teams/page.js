@@ -10,7 +10,7 @@ export const metadata = {
 export default function TeamsPage() {
   return (
     <>
-      <PageHero eyebrow="STKZ Teams" title="Find Your Team." copy="The right team should challenge the player, fit the stage of development, and create a reason to keep getting better." />
+      <PageHero eyebrow="STKZ Teams" title="Find Your Team." copy="The right team should challenge the player, fit the stage of development, and create a reason to keep getting better." image="/images/stkz-action-attack.webp" imageAlt="Youth soccer players attacking during a competitive match" />
       <section className="section">
         <div className="container split-heading section-heading">
           <div><p className="eyebrow">Team Placement</p><h2>Start with the player.</h2></div>

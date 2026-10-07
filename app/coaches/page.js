@@ -9,7 +9,7 @@ export const metadata = {
 export default function CoachesPage() {
   return (
     <>
-      <PageHero eyebrow="STKZ Coaches" title="People shape the environment." copy="Good coaching is more than running a session. It is teaching, observing, challenging, communicating, and helping players understand the game." />
+      <PageHero eyebrow="STKZ Coaches" title="People shape the environment." copy="Good coaching is more than running a session. It is teaching, observing, challenging, communicating, and helping players understand the game." image="/images/stkz-action-attack.webp" imageAlt="Youth soccer players reading pressure and attacking in a match" />
       <section className="section">
         <div className="container content-grid">
           <div><p className="eyebrow">Coach Profiles</p><h2>Current staff information is being finalized.</h2><p>We will publish coach profiles, team assignments, and verified credentials here as they are confirmed.</p></div>

@@ -10,7 +10,7 @@ export const metadata = {
 export default function DevelopmentPage() {
   return (
     <>
-      <PageHero eyebrow="Training & Development" title="Build the player." copy="Training should transfer to the game. Our development model focuses on technical execution, better decisions, stronger competitive habits, and individual growth." />
+      <PageHero eyebrow="Training & Development" title="Build the player." copy="Training should transfer to the game. Our development model focuses on technical execution, better decisions, stronger competitive habits, and individual growth." image="/images/stkz-action-strike.webp" imageAlt="Youth soccer player striking the ball during competition" />
       <section className="section section-navy">
         <div className="card-grid four">
           {developmentPillars.map((item) => <article className="number-card" key={item.number}><span>{item.number}</span><h3>{item.title}</h3><p>{item.copy}</p></article>)}
