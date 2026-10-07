@@ -13,11 +13,17 @@ export default function HomePage() {
           <div className="hero-copy">
             <p className="eyebrow gold">{site.descriptor}</p>
             <h1>{site.tagline}</h1>
-            <p className="hero-lead">A development-first soccer community built to help players grow, compete, and find opportunity in East Texas.</p>
+            <p className="hero-lead">Competitive teams, player development, and a soccer environment built to help players grow in Jacksonville and across East Texas.</p>
+            <div className="hero-facts" aria-label="STKZ SC pathways">
+              <span>Competitive Teams</span>
+              <span>Player Development</span>
+              <span>Tryouts & Interest</span>
+            </div>
             <div className="button-row">
-              <Link href="/join" className="button button-gold">Join STKZ</Link>
+              <Link href="/join#player-interest" className="button button-gold">Join STKZ</Link>
               <Link href="/teams" className="button button-outline-light">Find Your Team</Link>
             </div>
+            <p className="hero-route">Not sure where your player fits? <Link href="/join#player-interest">Start with player interest →</Link></p>
           </div>
           <div className="hero-mark">
             <Logo size={320} />
@@ -32,18 +38,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section pathway-section">
         <div className="container section-heading split-heading">
           <div>
-            <p className="eyebrow">Find Your Place</p>
-            <h2>One club. Multiple ways to grow.</h2>
+            <p className="eyebrow">Start Here</p>
+            <h2>What does your player need next?</h2>
           </div>
-          <p>Whether your player is looking for a competitive team, focused development, or the right next environment, start here.</p>
+          <p>You do not need to know the exact team or program. Pick the closest starting point and we’ll help with the fit.</p>
         </div>
-        <div className="card-grid three">
-          <article className="feature-card navy-card"><span>01</span><h3>Teams</h3><p>Explore the club pathway and tell us what your player is looking for.</p><Link href="/teams">Find your team →</Link></article>
-          <article className="feature-card"><span>02</span><h3>Development</h3><p>Technical growth, better decisions, stronger habits, and meaningful individual progress.</p><Link href="/development">Explore development →</Link></article>
-          <article className="feature-card"><span>03</span><h3>Tryouts & Interest</h3><p>Send us your player's information and we'll help identify the right next step.</p><Link href="/join">Register interest →</Link></article>
+        <div className="card-grid three pathway-grid">
+          <article className="feature-card navy-card">
+            <span>01</span><h3>Competitive Team</h3>
+            <p>Looking for a roster and competitive environment? Start with the team-placement pathway.</p>
+            <Link href="/teams">See the team pathway →</Link>
+          </article>
+          <article className="feature-card">
+            <span>02</span><h3>Player Development</h3>
+            <p>Looking for targeted improvement? See how STKZ approaches technical growth, decisions, and competitive habits.</p>
+            <Link href="/development">Explore development →</Link>
+          </article>
+          <article className="feature-card">
+            <span>03</span><h3>Not Sure Yet?</h3>
+            <p>Tell us the player’s birth year, current level, and goals. We’ll help identify the most relevant next step.</p>
+            <Link href="/join#player-interest">Tell us about your player →</Link>
+          </article>
         </div>
       </section>
 
@@ -89,7 +107,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <CTA />
+      <CTA title="Tell us about your player." copy="Start with a few basics. We’ll help point your family toward the right team, tryout, or development opportunity." />
     </>
   );
 }
