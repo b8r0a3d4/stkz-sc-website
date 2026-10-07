@@ -7,29 +7,38 @@ import { site } from "@/data/site";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const closeMenu = () => setOpen(false);
 
   return (
     <header className="site-header">
       <div className="container nav-inner">
-        <Link href="/" className="brand" aria-label="STKZ SC home" onClick={() => setOpen(false)}>
+        <Link href="/" className="brand" aria-label="STKZ SC home" onClick={closeMenu}>
           <Logo size={58} />
         </Link>
 
-        <nav className={`desktop-nav ${open ? "open" : ""}`} aria-label="Primary navigation">
+        <nav
+          id="primary-navigation"
+          className={`desktop-nav ${open ? "open" : ""}`}
+          aria-label="Primary navigation"
+        >
           {site.nav.map((item) => (
-            <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>
+            <Link className="nav-link" key={item.href} href={item.href} onClick={closeMenu}>
               {item.label}
             </Link>
           ))}
-          <Link href="/access" onClick={() => setOpen(false)}>Mission</Link>
+          <Link className="nav-link" href="/access" onClick={closeMenu}>Mission</Link>
+          <Link href="/join#player-interest" className="button button-gold mobile-menu-cta" onClick={closeMenu}>
+            Join STKZ
+          </Link>
         </nav>
 
-        <Link href="/join" className="button button-gold nav-cta">Join STKZ</Link>
+        <Link href="/join#player-interest" className="button button-gold nav-cta">Join STKZ</Link>
 
         <button
           className="menu-button"
           type="button"
-          aria-label="Toggle navigation"
+          aria-label={open ? "Close navigation" : "Open navigation"}
+          aria-controls="primary-navigation"
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
         >
