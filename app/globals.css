@@ -345,3 +345,117 @@ body { overflow-x: clip; }
   .join-form { order: 1 !important; }
   .join-copy { order: 2 !important; }
 }
+
+
+/* Hero composition refinement */
+.page-hero-photo .page-hero-inner {
+  grid-template-columns: minmax(0, 1.18fr) minmax(380px, .82fr);
+  gap: 44px;
+}
+.page-hero-photo .page-hero-text { min-width: 0; }
+.page-hero-photo h1 {
+  font-size: clamp(3.1rem, 5vw, 5.15rem);
+  line-height: .96;
+  text-wrap: balance;
+}
+.page-hero-photo .page-hero-copy {
+  max-width: 660px;
+}
+.page-hero-media {
+  min-width: 0;
+}
+.page-hero-media img {
+  object-position: center center;
+}
+
+@media (max-width: 1100px) and (min-width: 768px) {
+  .page-hero-photo .page-hero-inner {
+    grid-template-columns: minmax(0, 1.08fr) minmax(330px, .92fr);
+    gap: 34px;
+  }
+  .page-hero-photo h1 {
+    font-size: clamp(3rem, 5.2vw, 4.45rem);
+  }
+  .page-hero-photo .page-hero-copy {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-hero-photo .page-hero-inner {
+    display: block;
+    padding: 46px 0 0;
+  }
+  .page-hero-photo .page-hero-text {
+    padding-bottom: 32px;
+  }
+  .page-hero-photo h1,
+  .page-hero-cover h1 {
+    font-size: clamp(2.45rem, 10.8vw, 3.25rem);
+    line-height: .98;
+    text-wrap: balance;
+  }
+  .page-hero-photo .page-hero-copy,
+  .page-hero-cover .page-hero-copy {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  .page-hero-photo .page-hero-media {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    min-height: 0;
+    border: 0;
+    box-shadow: none;
+  }
+  .page-hero-photo .page-hero-media::after {
+    display: none;
+  }
+  .page-hero-photo .page-hero-media img {
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    transform: none;
+  }
+
+  .page-hero-cover {
+    display: block;
+    min-height: 0;
+    background: var(--navy);
+  }
+  .page-hero-cover::after {
+    display: none;
+  }
+  .page-hero-cover .page-hero-inner {
+    width: min(100% - 30px, var(--max));
+    padding: 46px 0 32px;
+  }
+  .page-hero-cover .page-hero-cover-media {
+    position: relative;
+    inset: auto;
+    z-index: auto;
+    width: 100%;
+  }
+  .page-hero-cover .page-hero-cover-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero-photo .page-hero-inner,
+  .page-hero-cover .page-hero-inner {
+    padding-top: 38px;
+  }
+  .page-hero-photo .page-hero-text {
+    padding-bottom: 26px;
+  }
+  .page-hero-photo h1,
+  .page-hero-cover h1 {
+    font-size: clamp(2.3rem, 10.5vw, 2.95rem);
+  }
+}
