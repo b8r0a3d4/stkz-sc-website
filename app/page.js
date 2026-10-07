@@ -1,13 +1,25 @@
 import Link from "next/link";
+import { preload } from "react-dom";
 import Logo from "@/components/Logo";
 import CTA from "@/components/CTA";
 import { developmentPillars, site } from "@/data/site";
 import { media } from "@/data/media";
 
 export default function HomePage() {
+  preload(media.home, { as: "image", fetchPriority: "high" });
+
   return (
     <>
-      <section className="home-hero" style={{ "--hero-image": `url("${media.home}")` }}>
+      <section className="home-hero">
+        <img
+          className="home-hero-media"
+          src={media.home}
+          alt=""
+          aria-hidden="true"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+        />
         <div className="pitch-lines" aria-hidden="true" />
         <div className="container hero-grid">
           <div className="hero-copy">
