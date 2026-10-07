@@ -28,7 +28,7 @@ export default function Footer() {
         <div>
           <p className="footer-title">Connect</p>
           <div className="footer-links">
-            <Link href="/join">Join STKZ</Link>
+            <Link href="/join">Join STKZ</Link>\n            <Link href="/donate">Donate</Link>
             <Link href="/contact">Contact</Link>
             <a href={`mailto:${site.email}`}>{site.email}</a>
             <a href={site.facebook} target="_blank" rel="noreferrer">Facebook</a>
