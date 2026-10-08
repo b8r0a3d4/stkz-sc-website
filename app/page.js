@@ -53,7 +53,7 @@ export default function HomePage() {
             <p className="eyebrow gold">Why STKZ</p>
             <h2>Build the player. Then build the opportunity.</h2>
           </div>
-          <p>We believe competitive soccer should develop skill, confidence, decision-making, resilience, and connection to community.</p>
+          <p>We believe competitive soccer should develop technical skill, decision-making, competitive habits, confidence, resilience, accountability, and leadership.</p>
         </div>
         <div className="card-grid four">
           {developmentPillars.map((item) => (
