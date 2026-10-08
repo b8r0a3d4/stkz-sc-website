@@ -21,14 +21,16 @@ export default function Footer() {
             <Link href="/teams">Teams</Link>
             <Link href="/development">Development</Link>
             <Link href="/facilities">Facilities</Link>
-            <Link href="/events">Events</Link>\n            <a href={site.store} target="_blank" rel="noreferrer">Shop STKZ</a>
+            <Link href="/events">Events</Link>
+            <a href={site.store} target="_blank" rel="noreferrer">Shop STKZ</a>
           </div>
         </div>
 
         <div>
           <p className="footer-title">Connect</p>
           <div className="footer-links">
-            <Link href="/join">Join STKZ</Link>\n            <Link href="/donate">Support STKZ</Link>
+            <Link href="/join">Join STKZ</Link>
+            <Link href="/donate">Support STKZ</Link>
             <Link href="/contact">Contact</Link>
             <a href={`mailto:${site.email}`}>{site.email}</a>
             <a href={site.facebook} target="_blank" rel="noreferrer">Facebook</a>
