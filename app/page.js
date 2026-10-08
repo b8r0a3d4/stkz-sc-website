@@ -1,10 +1,15 @@
 import Link from "next/link";
 import { preload } from "react-dom";
-import Logo from "@/components/Logo";
 import CTA from "@/components/CTA";
-import PlayerPathway from "@/components/PlayerPathway";
-import { developmentPillars, site } from "@/data/site";
+import { site } from "@/data/site";
 import { media } from "@/data/media";
+
+const highlights = [
+  { href: "/teams", number: "01", title: "Teams", copy: "See our current squads and where they compete.", action: "Find Your Team" },
+  { href: "/development", number: "02", title: "Development", copy: "Explore our Juniors, Academy, and Premier pathway.", action: "Our Approach" },
+  { href: "/coaches", number: "03", title: "Coaches", copy: "Meet the people guiding our players.", action: "Meet the Coaches" },
+  { href: "/facilities", number: "04", title: "Facilities", copy: "Discover The Soccer Lab and The Grounds.", action: "Explore Facilities" },
+];
 
 export default function HomePage() {
   preload(media.home, { as: "image", fetchPriority: "high" });
@@ -32,54 +37,39 @@ export default function HomePage() {
               <Link href="/join#player-interest" className="button button-outline-light">Join STKZ</Link>
             </div>
           </div>
-          <div className="hero-mark">
-            <Logo size={320} />
-            <p>Jacksonville, Texas</p>
+        </div>
+      </section>
+
+      <section className="section home-overview">
+        <div className="container">
+          <div className="section-heading">
+            <p className="eyebrow">Explore STKZ</p>
+            <h2>Find your place in the game.</h2>
+          </div>
+          <div className="home-quick-grid">
+            {highlights.map((item) => (
+              <Link href={item.href} className="home-quick-card" key={item.href}>
+                <span className="home-quick-number">{item.number}</span>
+                <h3>{item.title}</h3>
+                <p>{item.copy}</p>
+                <span className="home-quick-link">{item.action} →</span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="pillar-band">
-        <div className="container pillar-row">
-          {site.pillars.map((pillar) => <span key={pillar}>{pillar}</span>)}
-        </div>
-      </section>
-
-      <PlayerPathway />
-
-      <section className="section section-navy">
-        <div className="container section-heading split-heading light">
+      <section className="section section-navy home-mission">
+        <div className="container content-grid">
           <div>
-            <p className="eyebrow gold">Why STKZ</p>
-            <h2>Build the player. Then build the opportunity.</h2>
+            <p className="eyebrow gold">Every Player. Every Chance.</p>
+            <h2>Talent exists everywhere. Opportunity doesn’t.</h2>
           </div>
-          <p>We believe competitive soccer should develop technical skill, decision-making, competitive habits, confidence, resilience, accountability, and leadership.</p>
+          <div>
+            <p>We’re opening more doors for young players in Jacksonville and rural East Texas.</p>
+            <Link href="/access" className="button button-gold">Our Access Mission</Link>
+          </div>
         </div>
-        <div className="card-grid four">
-          {developmentPillars.map((item) => (
-            <article className="number-card" key={item.number}>
-              <span>{item.number}</span><h3>{item.title}</h3><p>{item.copy}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container section-heading split-heading">
-          <div><p className="eyebrow">Facilities</p><h2>Places built for development.</h2></div>
-          <p>STKZ SC is investing in environments that create more repetitions, more access, and more reasons for players to stay connected to the game.</p>
-        </div>
-        <div className="container facility-grid">
-          {site.facilities.map((facility) => (
-            <article className="facility-card" key={facility.name}>
-              <p className="eyebrow gold">{facility.eyebrow}</p>
-              <h3>{facility.name}</h3>
-              <p>{facility.copy}</p>
-              <p className="address">{facility.address}</p>
-            </article>
-          ))}
-        </div>
-        <div className="container section-action"><Link href="/facilities" className="text-link">Explore facilities →</Link></div>
       </section>
 
       <section className="shop-preview">
@@ -87,20 +77,13 @@ export default function HomePage() {
           <div>
             <p className="eyebrow gold">Official Team Store</p>
             <h2>Shop STKZ Soccer Club.</h2>
-            <p>Club gear and STKZ apparel are available through the official DMZ Team Store.</p>
+            <p>Find club gear and apparel at the official team store.</p>
           </div>
           <a href={site.store} target="_blank" rel="noreferrer" className="button button-gold">Shop STKZ</a>
         </div>
       </section>
 
-      <section className="section access-preview">
-        <div className="container access-grid">
-          <div><p className="eyebrow gold">Our Community. Our Why.</p><h2>Talent exists everywhere. Opportunity doesn’t.</h2></div>
-          <div><p>STKZ SC is working to reduce barriers through quality coaching, equipment, competition, facilities, scholarships, and player-development opportunities.</p><div className="button-row access-actions"><Link href="/access" className="button button-gold">Our Access Mission</Link><Link href="/donate" className="button button-outline-light">Support STKZ</Link></div></div>
-        </div>
-      </section>
-
-      <CTA title="Tell us about your player." copy="Start with a few basics. We’ll help point your family toward the right team, tryout, or development opportunity." />
+      <CTA title="Tell us about your player." copy="We’ll help you find the right team or development opportunity." />
     </>
   );
 }
