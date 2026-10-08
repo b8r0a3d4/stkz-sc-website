@@ -2,26 +2,32 @@
 
 import { useState } from "react";
 import { site } from "@/data/site";
+import { sendWebsiteInquiry } from "@/lib/sendWebsiteInquiry";
 
 export default function SponsorForm() {
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState({ type: "", message: "" });
+  const [sending, setSending] = useState(false);
 
-  function submit(event) {
+  async function submit(event) {
     event.preventDefault();
-    const fd = new FormData(event.currentTarget);
-    const data = Object.fromEntries(fd.entries());
-    const subject = `STKZ SC Sponsorship Inquiry — ${data["Business name"] || "New sponsor"}`;
-    const body = Object.entries(data)
-      .filter(([, value]) => String(value || "").trim())
-      .map(([key, value]) => `${key}: ${value}`)
-      .join("\n");
-
-    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setStatus("Your email app should open with the sponsorship details ready to send.");
+    if (sending) return;
+    const form = event.currentTarget;
+    setSending(true);
+    setStatus({ type: "", message: "" });
+    try {
+      await sendWebsiteInquiry("sponsor", form);
+      form.reset();
+      setStatus({ type: "success", message: "Thanks! Your sponsorship inquiry was sent to STKZ SC." });
+    } catch (error) {
+      setStatus({ type: "error", message: error.message || "Unable to send. Please try again." });
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
     <form className="form-card sponsor-form" onSubmit={submit}>
+      <div className="form-honeypot" aria-hidden="true"><label>Leave this blank<input name="_trap" tabIndex={-1} autoComplete="off" /></label></div>
       <div className="form-title-row">
         <div>
           <p className="eyebrow">Sponsorship Inquiry</p>
@@ -32,6 +38,7 @@ export default function SponsorForm() {
       <div className="form-grid">
         <label>Contact name<input name="Contact name" autoComplete="name" required /></label>
         <label>Business name<input name="Business name" required /></label>
+        <label>Email (optional)<input name="Email" type="email" autoComplete="email" /></label>
         <label>Sponsorship for<select name="Sponsorship for" defaultValue="" required>
           <option value="" disabled>Select one</option>
           <option>Sponsor a Player</option>
@@ -44,9 +51,9 @@ export default function SponsorForm() {
         <label className="full">Anything else we should know?<textarea name="Message" rows="4" /></label>
       </div>
 
-      <button className="button button-gold join-submit" type="submit">Send Sponsorship Inquiry</button>
-      <p className="form-note">Submitting opens your email app with the sponsorship information ready to send to STKZ SC.</p>
-      {status && <p className="form-status">{status}</p>}
+      <button className="button button-gold join-submit" type="submit" disabled={sending}>{sending ? "Sending…" : "Send Sponsorship Inquiry"}</button>
+      <p className="form-note">Your inquiry goes directly to STKZ SC. No email app required.</p>
+      {status.message && <p className={`form-status ${status.type}`} role={status.type === "error" ? "alert" : "status"} aria-live="polite">{status.message}</p>}
     </form>
   );
 }
