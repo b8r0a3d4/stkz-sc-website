@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import CTA from "@/components/CTA";
+import PlayerPathway from "@/components/PlayerPathway";
 import { developmentPillars } from "@/data/site";
 import { media } from "@/data/media";
 
@@ -20,6 +21,7 @@ export default function DevelopmentPage() {
         imageAlt="Youth soccer player striking the ball during competition"
         variant="cover"
       />
+      <PlayerPathway compact />
       <section className="section section-navy development-pillars-section">
         <div className="container section-heading split-heading light">
           <div><p className="eyebrow gold">What We Develop</p><h2>Skills that have to survive the game.</h2></div>
