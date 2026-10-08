@@ -4,7 +4,7 @@ import { media } from "@/data/media";
 
 export const metadata = {
   title: "About STKZ",
-  description: "Learn about STKZ SC's player-first development philosophy, competitive culture, and commitment to opportunity.",
+  description: "Meet STKZ SC, a development-first youth soccer club serving Jacksonville and East Texas.",
 };
 
 export default function AboutPage() {
@@ -13,34 +13,24 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About STKZ"
         title="Our Community. Our Why."
-        copy="STKZ SC exists to develop players, create opportunities, and build a stronger soccer community in East Texas."
+        copy="Developing players, creating opportunities, and building a stronger soccer community in East Texas."
         image={media.about}
         imageAlt="Youth soccer players competing for possession during a match"
         variant="cover"
       />
-      <section className="section">
+      <section className="section about-short">
         <div className="container content-grid">
           <div>
-            <p className="eyebrow">What We Believe</p>
-            <p className="statement">Development should open doors — not close them.</p>
+            <p className="eyebrow">Our Standard</p>
+            <h2>Develop. Compete. Contribute.</h2>
+            <p>Players come first. We teach them to think, compete with courage, and enjoy getting better.</p>
           </div>
           <div className="content-card">
-            <h3>Player First</h3>
-            <p>We want players to become more capable, more confident, and more competitive while keeping the game meaningful and enjoyable.</p>
-            <p>That means putting development ahead of shortcuts, teaching players to solve the game, and creating an environment where effort and growth matter.</p>
-          </div>
-        </div>
-      </section>
-      <section className="section section-navy">
-        <div className="container content-grid">
-          <div><p className="eyebrow gold">The STKZ Standard</p><h2>Develop. Compete. Contribute.</h2></div>
-          <div>
+            <h3>What We Believe</h3>
             <ul className="list-clean">
               <li>Teach the player, not just the pattern.</li>
-              <li>Compete with courage and responsibility.</li>
-              <li>Create opportunities for more players to access quality soccer.</li>
-              <li>Invest in coaching, facilities, and community.</li>
-              <li>Keep the long-term player at the center of decisions.</li>
+              <li>Make effort, growth, and accountability matter.</li>
+              <li>Open doors to quality soccer in our community.</li>
             </ul>
           </div>
         </div>
