@@ -82,6 +82,17 @@ export default function HomePage() {
         <div className="container section-action"><Link href="/facilities" className="text-link">Explore facilities →</Link></div>
       </section>
 
+      <section className="shop-preview">
+        <div className="container shop-preview-inner">
+          <div>
+            <p className="eyebrow gold">Official Team Store</p>
+            <h2>Shop STKZ Soccer Club.</h2>
+            <p>Club gear and STKZ apparel are available through the official DMZ Team Store.</p>
+          </div>
+          <a href={site.store} target="_blank" rel="noreferrer" className="button button-gold">Shop STKZ</a>
+        </div>
+      </section>
+
       <section className="section access-preview">
         <div className="container access-grid">
           <div><p className="eyebrow gold">Our Community. Our Why.</p><h2>Talent exists everywhere. Opportunity doesn’t.</h2></div>
