@@ -862,3 +862,220 @@ body { overflow-x: clip; }
     flex-direction: column;
   }
 }
+
+
+/* STKZ player pathway */
+.player-pathway {
+  padding: 96px 0 88px;
+  background: #f7f8fa;
+}
+.player-pathway.compact {
+  padding: 82px 0;
+  background: white;
+}
+.pathway-heading {
+  display: grid;
+  grid-template-columns: 1.18fr .82fr;
+  gap: 64px;
+  align-items: end;
+  margin-bottom: 42px;
+}
+.pathway-heading h2 {
+  margin-bottom: 0;
+  font-size: clamp(2.7rem, 4.7vw, 5rem);
+}
+.pathway-heading > p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 620px;
+}
+.pathway-roadmap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  position: relative;
+}
+.pathway-stage {
+  min-height: 430px;
+  padding: 30px;
+  background: white;
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.pathway-stage + .pathway-stage {
+  border-left: 0;
+}
+.pathway-stage::after {
+  content: "→";
+  position: absolute;
+  right: -17px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy);
+  font-family: var(--font-display), Arial Black, sans-serif;
+  font-size: 18px;
+  box-shadow: 0 0 0 6px #f7f8fa;
+}
+.player-pathway.compact .pathway-stage::after {
+  box-shadow: 0 0 0 6px white;
+}
+.pathway-stage:last-child::after {
+  display: none;
+}
+.pathway-grassroots {
+  border-top: 6px solid #4e9d67;
+}
+.pathway-academy {
+  border-top: 6px solid #3e8bc4;
+}
+.pathway-premier {
+  border-top: 6px solid var(--navy);
+}
+.pathway-stage-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 18px;
+}
+.pathway-step {
+  display: block;
+  color: #8d99aa;
+  font-family: var(--font-display), Arial Black, sans-serif;
+  font-size: 11px;
+  margin-bottom: 12px;
+}
+.pathway-stage h3 {
+  margin: 0;
+  font-size: clamp(1.65rem, 2.2vw, 2.25rem);
+}
+.pathway-age {
+  flex: 0 0 auto;
+  padding: 7px 10px;
+  background: var(--gold);
+  color: var(--navy);
+  font-family: var(--font-display), Arial Black, sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.pathway-theme {
+  margin: 30px 0 18px;
+  color: var(--navy);
+  font-family: var(--font-display), Arial Black, sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.pathway-stage ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+.pathway-stage li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.4;
+}
+.pathway-stage li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .52em;
+  width: 7px;
+  height: 7px;
+  background: var(--gold);
+}
+.pathway-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: center;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.pathway-principles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+}
+.pathway-principles span {
+  position: relative;
+  font-family: var(--font-display), Arial Black, sans-serif;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: .05em;
+  color: var(--navy);
+}
+.pathway-principles span + span::before {
+  content: "•";
+  position: absolute;
+  left: -14px;
+  color: var(--gold);
+}
+
+@media (max-width: 991px) {
+  .pathway-heading {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .pathway-roadmap {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .pathway-stage + .pathway-stage {
+    border-left: 1px solid var(--line);
+  }
+  .pathway-stage {
+    min-height: auto;
+  }
+  .pathway-stage::after {
+    content: "↓";
+    right: auto;
+    left: 50%;
+    top: auto;
+    bottom: -26px;
+    transform: translateX(-50%);
+    box-shadow: 0 0 0 6px #f7f8fa;
+  }
+  .player-pathway.compact .pathway-stage::after {
+    box-shadow: 0 0 0 6px white;
+  }
+  .pathway-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 767px) {
+  .player-pathway,
+  .player-pathway.compact {
+    padding: 64px 0;
+  }
+  .pathway-heading {
+    margin-bottom: 28px;
+  }
+  .pathway-heading h2 {
+    font-size: clamp(2.35rem, 10vw, 3.5rem);
+  }
+  .pathway-stage {
+    padding: 24px 22px;
+  }
+  .pathway-theme {
+    margin-top: 24px;
+  }
+  .pathway-principles {
+    gap: 8px 18px;
+  }
+}
