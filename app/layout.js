@@ -38,6 +38,8 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="preconnect" href="https://4q000fmy3bu2yndr.public.blob.vercel-storage.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="//4q000fmy3bu2yndr.public.blob.vercel-storage.com" />
+        <link rel="preconnect" href="https://drive.google.com" />
+        <link rel="dns-prefetch" href="//drive.google.com" />
       </head>
       <body className={`${display.variable} ${body.variable}`}>
         <Header />
