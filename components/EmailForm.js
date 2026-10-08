@@ -87,19 +87,18 @@ export default function EmailForm({ type = "contact" }) {
             <option>Open to the best fit</option>
             <option>Not sure yet</option>
           </select></label>
-          <label>Current playing level<select name="Current playing level" defaultValue="">
+          <label>Where is your player now?<select name="Current player pathway" defaultValue="">
             <option value="">Select one</option>
-            <option>New to organized soccer</option>
-            <option>Recreational</option>
-            <option>Academy / developmental</option>
-            <option>Competitive / club</option>
+            <option>Juniors / Grassroots</option>
+            <option>Academy</option>
+            <option>Premier</option>
             <option>Not sure</option>
           </select></label>
-          <label>What is your family looking for?<select name="What family is looking for" defaultValue="">
+          <label>Where does your player want to go?<select name="Desired player pathway" defaultValue="">
             <option value="">Select one</option>
-            <option>Competitive team / tryout</option>
-            <option>Player development / training</option>
-            <option>Both team and development</option>
+            <option>Juniors / Grassroots</option>
+            <option>Academy</option>
+            <option>Premier</option>
             <option>Not sure — help us choose</option>
           </select></label>
           <label>Current team / club<input name="Current team / club" /></label>
