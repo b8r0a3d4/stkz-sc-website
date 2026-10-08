@@ -27,7 +27,7 @@ export default function Header() {
             </Link>
           ))}
           <Link className="nav-link" href="/access" onClick={closeMenu}>Mission</Link>
-          <Link className="nav-link donate-nav-link" href="/donate" onClick={closeMenu}>Donate</Link>
+          <Link className="nav-link donate-nav-link" href="/donate" onClick={closeMenu}>Support</Link>
           <Link href="/join#player-interest" className="button button-gold mobile-menu-cta" onClick={closeMenu}>
             Join STKZ
           </Link>
