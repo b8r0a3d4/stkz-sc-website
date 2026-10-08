@@ -698,3 +698,167 @@ body { overflow-x: clip; }
     padding: 22px;
   }
 }
+
+
+/* Current teams and leagues */
+.current-teams-section {
+  background: #fbfbfa;
+}
+.league-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+.league-card {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 24px;
+  align-items: center;
+  padding: 28px;
+  background: var(--navy);
+  color: white;
+  border: 1px solid rgba(255,215,0,.22);
+}
+.league-code {
+  min-height: 110px;
+  display: grid;
+  place-items: center;
+  background: var(--gold);
+  color: var(--navy);
+  font-family: var(--font-display), Arial Black, sans-serif;
+  font-size: 1.65rem;
+  letter-spacing: -.03em;
+}
+.league-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.55rem;
+}
+.league-card p {
+  margin: 0;
+  color: #dfe5ef;
+  font-size: 15px;
+}
+.league-card .eyebrow {
+  margin-bottom: 8px;
+}
+.league-card strong {
+  color: white;
+}
+
+.teams-table-wrap {
+  background: white;
+  border: 1px solid var(--line);
+}
+.teams-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.teams-table th {
+  background: #e9eef5;
+  color: var(--navy);
+  padding: 15px 18px;
+  text-align: left;
+  font-family: var(--font-display), Arial Black, sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: .04em;
+}
+.teams-table td {
+  padding: 16px 18px;
+  border-top: 1px solid var(--line);
+  font-size: 16px;
+}
+.teams-table td:first-child {
+  font-weight: 800;
+  color: var(--navy);
+}
+.league-pill {
+  display: inline-flex;
+  min-width: 58px;
+  justify-content: center;
+  padding: 7px 10px;
+  background: var(--navy);
+  color: white;
+  font-family: var(--font-display), Arial Black, sans-serif;
+  font-size: 11px;
+  letter-spacing: .04em;
+}
+.teams-mobile-list {
+  display: none;
+}
+.current-teams-cta {
+  margin-top: 24px;
+  padding: 22px 26px;
+  background: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.current-teams-cta p {
+  margin: 0;
+  color: var(--navy);
+  font-size: 16px;
+  max-width: 720px;
+}
+
+@media (max-width: 767px) {
+  .league-grid {
+    grid-template-columns: 1fr;
+  }
+  .league-card {
+    grid-template-columns: 86px 1fr;
+    padding: 22px;
+    gap: 18px;
+  }
+  .league-code {
+    min-height: 86px;
+    font-size: 1.35rem;
+  }
+  .teams-table {
+    display: none;
+  }
+  .teams-mobile-list {
+    display: grid;
+  }
+  .team-row-card {
+    padding: 22px;
+    border-bottom: 1px solid var(--line);
+  }
+  .team-row-card:last-child {
+    border-bottom: 0;
+  }
+  .team-row-label {
+    margin: 0 0 6px;
+    font-family: var(--font-display), Arial Black, sans-serif;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: .06em;
+    color: var(--muted);
+  }
+  .team-row-card h3 {
+    margin: 0 0 16px;
+    font-size: 1.45rem;
+  }
+  .team-row-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .team-row-meta span {
+    display: grid;
+    gap: 4px;
+    font-size: 14px;
+  }
+  .team-row-meta strong {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--muted);
+  }
+  .current-teams-cta {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
