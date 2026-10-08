@@ -91,7 +91,7 @@ export default function DonatePage() {
         eyebrow="Support STKZ SC"
         title="Help create the next opportunity."
         copy="Donate, sponsor, or partner with STKZ SC to expand access to quality soccer, player development, competition, facilities, and community opportunity in East Texas."
-        image={media.access}
+        image={media.support}
         imageAlt="Youth soccer players competing during a match"
         variant="cover"
       />
