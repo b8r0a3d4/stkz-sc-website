@@ -51,7 +51,7 @@ export const developmentPillars = [
   },
   {
     number: "04",
-    title: "Individual Growth",
-    copy: "Every player develops on a different timeline. We focus on the next meaningful step rather than a one-size-fits-all path.",
+    title: "Character & Mentality",
+    copy: "We develop confidence, resilience, accountability, and leadership so players can respond well to pressure, setbacks, responsibility, and opportunity.",
   },
 ];
