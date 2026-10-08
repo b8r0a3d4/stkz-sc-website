@@ -1464,3 +1464,10 @@ body { overflow-x: clip; }
   .home-quick-card { min-height: 0; }
   .donation-use-section .donate-impact-grid { grid-template-columns: 1fr; }
 }
+
+/* Direct form submission feedback */
+.form-honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.form-card .button:disabled { opacity: .65; cursor: wait; transform: none; }
+.form-status.success { color: #137333; }
+.form-status.error { color: #b42318; }
+.form-status { margin-top: 12px; font-weight: 700; }

@@ -2,33 +2,39 @@
 
 import { useState } from "react";
 import { site } from "@/data/site";
-
-function buildBody(data) {
-  return Object.entries(data)
-    .filter(([, value]) => String(value || "").trim())
-    .map(([key, value]) => `${key}: ${value}`)
-    .join("\n");
-}
+import { sendWebsiteInquiry } from "@/lib/sendWebsiteInquiry";
 
 export default function EmailForm({ type = "contact" }) {
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState({ type: "", message: "" });
+  const [sending, setSending] = useState(false);
   const join = type === "join";
 
-  function submit(event) {
+  async function submit(event) {
     event.preventDefault();
-    const fd = new FormData(event.currentTarget);
-    const data = Object.fromEntries(fd.entries());
-    const subject = join
-      ? `STKZ SC Player Interest — ${data["Player name"] || "New inquiry"}`
-      : `STKZ SC Website Inquiry — ${data.Name || "New message"}`;
-    const body = buildBody(data);
-    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setStatus("Your email app should open with the form details ready to send.");
+    if (sending) return;
+    const form = event.currentTarget;
+    setSending(true);
+    setStatus({ type: "", message: "" });
+    try {
+      await sendWebsiteInquiry(join ? "join" : "contact", form);
+      form.reset();
+      setStatus({
+        type: "success",
+        message: join
+          ? "Thanks! Your player's information was sent to STKZ SC. We'll be in touch."
+          : "Thanks! Your message was sent to STKZ SC.",
+      });
+    } catch (error) {
+      setStatus({ type: "error", message: error.message || "Unable to send. Please try again." });
+    } finally {
+      setSending(false);
+    }
   }
 
   if (!join) {
     return (
       <form className="form-card" onSubmit={submit}>
+        <div className="form-honeypot" aria-hidden="true"><label>Leave this blank<input name="_trap" tabIndex={-1} autoComplete="off" /></label></div>
         <div className="form-grid">
           <label>Name<input name="Name" autoComplete="name" required /></label>
           <label>Email<input name="Email" type="email" autoComplete="email" required /></label>
@@ -43,15 +49,16 @@ export default function EmailForm({ type = "contact" }) {
           </select></label>
           <label className="full">Message<textarea name="Message" rows="6" required /></label>
         </div>
-        <button className="button button-gold" type="submit">Send Message</button>
-        <p className="form-note">Submitting opens your email app so you can send the message directly to STKZ SC.</p>
-        {status && <p className="form-status">{status}</p>}
+        <button className="button button-gold" type="submit" disabled={sending}>{sending ? "Sending…" : "Send Message"}</button>
+        <p className="form-note">Your message goes directly to STKZ SC. No email app required.</p>
+        {status.message && <p className={`form-status ${status.type}`} role={status.type === "error" ? "alert" : "status"} aria-live="polite">{status.message}</p>}
       </form>
     );
   }
 
   return (
     <form className="form-card join-interest-form" onSubmit={submit}>
+      <div className="form-honeypot" aria-hidden="true"><label>Leave this blank<input name="_trap" tabIndex={-1} autoComplete="off" /></label></div>
       <div className="form-title-row">
         <div>
           <p className="eyebrow">Player Interest</p>
@@ -107,9 +114,9 @@ export default function EmailForm({ type = "contact" }) {
         </div>
       </details>
 
-      <button className="button button-gold join-submit" type="submit">Send Player Interest</button>
-      <p className="form-note">Submitting opens your email app with the player information ready to send to STKZ SC. If it does not open, email <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
-      {status && <p className="form-status">{status}</p>}
+      <button className="button button-gold join-submit" type="submit" disabled={sending}>{sending ? "Sending…" : "Send Player Interest"}</button>
+      <p className="form-note">Your information goes directly to STKZ SC. For help, email <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+      {status.message && <p className={`form-status ${status.type}`} role={status.type === "error" ? "alert" : "status"} aria-live="polite">{status.message}</p>}
     </form>
   );
 }
