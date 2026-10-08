@@ -16,7 +16,7 @@ export default function DevelopmentPage() {
       <PageHero
         eyebrow="Training & Development"
         title="Build the player."
-        copy="Training should transfer to the game. We focus on technical execution, better decisions, competitive habits, and the next meaningful step for the individual player."
+        copy="Training should transfer to the game. We focus on technical execution, better decisions, competitive habits, and the character and mentality players need to handle pressure and responsibility."
         image={media.development}
         imageAlt="Youth soccer player striking the ball during competition"
         variant="cover"
@@ -25,7 +25,7 @@ export default function DevelopmentPage() {
       <section className="section section-navy development-pillars-section">
         <div className="container section-heading split-heading light">
           <div><p className="eyebrow gold">What We Develop</p><h2>Skills that have to survive the game.</h2></div>
-          <p>Good training connects technique to perception, pressure, movement, decisions, and competitive behavior.</p>
+          <p>Good training connects technique and decision-making with confidence, resilience, accountability, and leadership.</p>
         </div>
         <div className="card-grid four">
           {developmentPillars.map((item) => <article className="number-card" key={item.number}><span>{item.number}</span><h3>{item.title}</h3><p>{item.copy}</p></article>)}
