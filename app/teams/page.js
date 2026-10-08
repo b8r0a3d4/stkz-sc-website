@@ -2,10 +2,11 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import CTA from "@/components/CTA";
 import { media } from "@/data/media";
+import { currentTeams, leagues } from "@/data/teams";
 
 export const metadata = {
   title: "Teams",
-  description: "Explore the STKZ SC team-placement pathway and find the right competitive environment for your player.",
+  description: "Explore current STKZ SC teams competing in the East Texas Premier League and Texas Clubs Soccer League.",
 };
 
 export default function TeamsPage() {
@@ -14,10 +15,74 @@ export default function TeamsPage() {
       <PageHero
         eyebrow="STKZ Teams"
         title="Find Your Team."
-        copy="You do not need to know the exact team name. Start with your player’s birth year, current level, and goals — we’ll help with the fit."
+        copy="See our current teams and competition leagues, then tell us about your player and we’ll help identify the right next step."
         image={media.teams}
         imageAlt="Youth soccer players attacking during a competitive match"
       />
+
+      <section className="section current-teams-section">
+        <div className="container section-heading split-heading">
+          <div>
+            <p className="eyebrow">Current Teams & Leagues</p>
+            <h2>Where STKZ competes.</h2>
+          </div>
+          <p>STKZ SC currently competes through the East Texas Premier League and Texas Clubs Soccer League, with teams playing in Tyler and Dallas.</p>
+        </div>
+
+        <div className="container league-grid">
+          {leagues.map((league) => (
+            <article className="league-card" key={league.code}>
+              <div className="league-code">{league.code}</div>
+              <div>
+                <p className="eyebrow gold">League</p>
+                <h3>{league.name}</h3>
+                <p>Current STKZ competition location: <strong>{league.competitionArea}</strong></p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="container teams-table-wrap">
+          <table className="teams-table">
+            <thead>
+              <tr>
+                <th>Team</th>
+                <th>League</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              {currentTeams.map((team) => (
+                <tr key={team.team}>
+                  <td>{team.team}</td>
+                  <td><span className="league-pill">{team.league}</span></td>
+                  <td>{team.location}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+          <div className="teams-mobile-list" aria-label="Current STKZ teams">
+            {currentTeams.map((team) => (
+              <article className="team-row-card" key={team.team}>
+                <div>
+                  <p className="team-row-label">Team</p>
+                  <h3>{team.team}</h3>
+                </div>
+                <div className="team-row-meta">
+                  <span><strong>League</strong>{team.league}</span>
+                  <span><strong>Location</strong>{team.location}</span>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="container current-teams-cta">
+          <p>Don’t see an exact fit? Team availability and placement can change as players develop and rosters evolve.</p>
+          <Link href="/join#player-interest" className="button button-navy">Tell Us About Your Player</Link>
+        </div>
+      </section>
 
       <section className="team-fit-band">
         <div className="container team-fit-row">
@@ -67,7 +132,7 @@ export default function TeamsPage() {
         </div>
       </section>
 
-      <CTA title="Ready to find the fit?" copy="Tell us your player’s birth year, level, and goals. You do not need to know the exact team name." />
+      <CTA title="Ready to find the fit?" copy="Tell us your player’s birth year and goals. You do not need to know the exact team name." />
     </>
   );
 }
