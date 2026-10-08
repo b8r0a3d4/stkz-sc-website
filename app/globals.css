@@ -1282,3 +1282,37 @@ body { overflow-x: clip; }
     width: 100%;
   }
 }
+
+
+/* Team store */
+.shop-preview {
+  background: var(--navy);
+  color: white;
+  border-top: 1px solid rgba(255,215,0,.18);
+  border-bottom: 1px solid rgba(255,215,0,.18);
+}
+.shop-preview-inner {
+  min-height: 220px;
+  padding: 46px 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+}
+.shop-preview h2 {
+  margin-bottom: 10px;
+  font-size: clamp(2.4rem, 4vw, 4.2rem);
+}
+.shop-preview p:not(.eyebrow) {
+  margin: 0;
+  color: #dfe5ef;
+  max-width: 650px;
+}
+
+@media (max-width: 767px) {
+  .shop-preview-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 38px 0;
+  }
+}
