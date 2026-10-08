@@ -25,7 +25,7 @@ export default function HomePage() {
         <div className="container hero-grid">
           <div className="hero-copy">
             <p className="eyebrow gold">{site.tagline}</p>
-            <h1>Gardner Is Cool!</h1>
+            <h1>Developing Players. Creating Opportunities.</h1>
             <p className="hero-lead">Competitive youth soccer and player development in Jacksonville, Texas, serving families across East Texas.</p>
             <div className="button-row">
               <Link href="/teams" className="button button-gold">Find Your Team</Link>
