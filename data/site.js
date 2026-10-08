@@ -4,6 +4,7 @@ export const site = {
   descriptor: "Nonprofit Youth Soccer · Jacksonville, Texas",
   email: "stkzsc@gmail.com",
   facebook: "https://www.facebook.com/profile.php?id=61577763441107",
+  store: "https://dmzvinyls.myshopify.com/collections/stkz-soccer-club",
   nav: [
     { href: "/about", label: "About" },
     { href: "/teams", label: "Teams" },
