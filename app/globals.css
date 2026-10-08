@@ -1316,3 +1316,64 @@ body { overflow-x: clip; }
     padding: 38px 0;
   }
 }
+
+
+/* Responsive homepage hero — protects headline at all viewport sizes */
+.home-hero .hero-grid {
+  display: block;
+  width: min(var(--max), calc(100% - 48px));
+  padding: clamp(64px, 7vw, 105px) 0;
+}
+.home-hero .hero-copy {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+.home-hero .hero-copy h1 {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 26px;
+  font-size: clamp(3rem, 5.25vw, 4.65rem);
+  line-height: 1.04;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+.home-hero .hero-mark {
+  display: none; /* Avoid covering the headline; the logo remains in the header. */
+}
+.home-hero .hero-lead {
+  max-width: 720px;
+}
+@media (max-width: 767px) {
+  .home-hero .hero-grid {
+    width: min(var(--max), calc(100% - 30px));
+    padding: clamp(56px, 11vw, 80px) 0;
+  }
+  .home-hero .hero-copy h1 {
+    font-size: clamp(1.85rem, 8.2vw, 3.6rem);
+    line-height: 1.09;
+    text-wrap: pretty;
+  }
+  .home-hero .hero-lead {
+    font-size: clamp(1rem, 4vw, 1.125rem);
+  }
+}
+@media (max-width: 480px) {
+  .home-hero .hero-grid {
+    width: min(var(--max), calc(100% - 32px));
+    padding: 56px 0 60px;
+  }
+  .home-hero .hero-copy h1 {
+    font-size: clamp(1.8rem, 8.1vw, 2.45rem);
+    line-height: 1.11;
+  }
+}
+@media (max-width: 360px) {
+  .home-hero .hero-grid {
+    width: min(var(--max), calc(100% - 24px));
+  }
+  .home-hero .hero-copy h1 {
+    font-size: clamp(1.75rem, 8vw, 2rem);
+  }
+}
