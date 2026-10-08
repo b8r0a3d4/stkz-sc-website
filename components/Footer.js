@@ -21,7 +21,7 @@ export default function Footer() {
             <Link href="/teams">Teams</Link>
             <Link href="/development">Development</Link>
             <Link href="/facilities">Facilities</Link>
-            <Link href="/events">Events</Link>
+            <Link href="/events">Events</Link>\n            <a href={site.store} target="_blank" rel="noreferrer">Shop STKZ</a>
           </div>
         </div>
 
