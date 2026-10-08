@@ -23,19 +23,13 @@ export default function HomePage() {
         <div className="pitch-lines" aria-hidden="true" />
         <div className="container hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow gold">{site.descriptor}</p>
-            <h1>{site.tagline}</h1>
-            <p className="hero-lead">Competitive teams, player development, and a soccer environment built to help players grow in Jacksonville and across East Texas.</p>
-            <div className="hero-facts" aria-label="STKZ SC pathways">
-              <span>Competitive Teams</span>
-              <span>Player Development</span>
-              <span>Tryouts & Interest</span>
-            </div>
+            <p className="eyebrow gold">{site.tagline}</p>
+            <h1>Developing Players. Creating Opportunities.</h1>
+            <p className="hero-lead">Competitive youth soccer and player development in Jacksonville, Texas, serving families across East Texas.</p>
             <div className="button-row">
-              <Link href="/join#player-interest" className="button button-gold">Join STKZ</Link>
-              <Link href="/teams" className="button button-outline-light">Find Your Team</Link>
+              <Link href="/teams" className="button button-gold">Find Your Team</Link>
+              <Link href="/join#player-interest" className="button button-outline-light">Join STKZ</Link>
             </div>
-            <p className="hero-route">Not sure where your player fits? <Link href="/join#player-interest">Start with player interest →</Link></p>
           </div>
           <div className="hero-mark">
             <Logo size={320} />
